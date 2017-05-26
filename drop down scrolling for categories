@@ -1,0 +1,15 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+<script type="text/javascript">
+
+var $j = jQuery;
+
+
+    $j(function(){
+      $j('nav ul li:has(ul)').addClass('dropable').bind('mouseover', function(){
+    $j(this).find('ul').slideDown(200);
+    $j(this).addClass('hovering');
+  }).bind('mouseleave', function(){
+    $j(this).find('ul').stop(true, true).hide();
+    $j(this).removeClass('hovering');
+  });
+});
